@@ -37,3 +37,15 @@
    * return: divided number      
    * behavior: calculates the quotient of the two arguments
    * purpose: to divide two numbers
+
+
+* operateIntermediary: function
+  *  args: 3
+       * operation: an add, subtract, multiply or divide function
+       * arg1: a number
+           * purpose: to be added/subtracted/multiplied or divided
+       * arg2: a number
+           * purpose: to add/subtract/multiply or divide
+   * return: added/subtracted/multiplied or divided number      
+   * behavior: calculates the sum/diffference/product or quotient of the two arguments
+   * purpose: to do a mathematical operation using two numbers
