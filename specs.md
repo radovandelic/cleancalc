@@ -45,45 +45,46 @@
 		* behavior: divides arg1 to arg2 and returns the result
 		* purpose: so users can divide
 
-* testAdd: function
-	* numbers: 2
-		* number1, number2: number
-			* purpose: math need numbers
-	* return: number
-	* behavior: tests the add function
-	* purpose: so users can test the add function
+* tests: object
+	* testAdd: function
+		* numbers: 2
+			* number1, number2: number
+				* purpose: math need numbers
+		* return: number
+		* behavior: tests the add function
+		* purpose: so users can test the add function
 
-* testSubtract: function
-	* numbers: 2
-		* number1, number2: number
-			* purpose: math need numbers
-	* return: number
-	* behavior: tests the subtract function	
-	* purpose: so users can the test subtract function
+	* testSubtract: function
+		* numbers: 2
+			* number1, number2: number
+				* purpose: math need numbers
+		* return: number
+		* behavior: tests the subtract function	
+		* purpose: so users can the test subtract function
 
-* testMultiply: function
-	* numbers: 2
-		* number1, number2: number
-			* purpose: math need numbers
-	* return: number
-	* behavior: tests the multiply function
-	* purpose: so users can test the multiply function
-* testDivide: function
-	* numbers: 2
-		* number1, number2: number
-			* purpose: math need numbers
-	* return: number
-	* behavior: tests the add function	
-	* purpose: so users can test the divide function
+	* testMultiply: function
+		* numbers: 2
+			* number1, number2: number
+				* purpose: math need numbers
+		* return: number
+		* behavior: tests the multiply function
+		* purpose: so users can test the multiply function
+	* testDivide: function
+		* numbers: 2
+			* number1, number2: number
+				* purpose: math need numbers
+		* return: number
+		* behavior: tests the add function	
+		* purpose: so users can test the divide function
 
-* testOperate: function
-	* numbers: 3
-		* operation: string
-			* purpose: designates which method to call
-		* number1: number
-			* purpose: required operand
-		* number2: number
-			* purpose: optional operand
-	* return: number
-	* behavior: testing switchboard
-	* purpose: allows users to access testing methods from a single interface
+	* testOperate: function
+		* numbers: 3
+			* operation: string
+				* purpose: designates which method to call
+			* number1: number
+				* purpose: required operand
+			* number2: number
+				* purpose: optional operand
+		* return: number
+		* behavior: testing switchboard
+		* purpose: allows users to access testing methods from a single interface

@@ -69,17 +69,27 @@ var tests = {
 
 };
 
+var args = process.argv;
+var object = args[2];
+var method = args[3];
+var number1 = parseInt(args[4]);
+var number2 = parseInt(args[5]);
+if (object != undefined) {
+	console.log(object == "test" ? tests[method](number1, number2) : calc[method](number1, number2));
 
-var numberOfTestRuns = 10;
-for (var i = 1; i < numberOfTestRuns + 1; i++) {
 
-	var number1 = Math.round(Math.random() * (10 ** (Math.random() * 10))); //creates random integer in a random size range
-	var number2 = Math.round(Math.random() * (10 ** (Math.random() * 10))); //creates random integer in a random size range
+} else {
+	var numberOfTestRuns = 10;
+	for (var i = 1; i < numberOfTestRuns + 1; i++) {
 
-	console.log("\n-------------------\nTest #" + i + ":");
-	console.log("(" + number1 + ", " + number2 + ")\n");
+		var number1 = Math.round(Math.random() * (10 ** (Math.random() * 10))); //creates random integer in a random size range
+		var number2 = Math.round(Math.random() * (10 ** (Math.random() * 10))); //creates random integer in a random size range
 
-	tests.testMeta(number1, number2).forEach(function (result) {
-		console.log(result);
-	});
+		console.log("\n-------------------\nTest #" + i + ":");
+		console.log("(" + number1 + ", " + number2 + ")\n");
+
+		tests.testMeta(number1, number2).forEach(function (result) {
+			console.log(result);
+		});
+	}
 }
