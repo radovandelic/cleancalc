@@ -39,9 +39,9 @@
    * purpose: to divide two numbers
 
 
-* operateIntermediary: function
+* operate: function
   *  args: 3
-       * operation: a switchboard
+       * operation: a function
            * purpose: it runs add/subtract/multiply and divide functions
        * arg1: a number
            * purpose: to be added/subtracted/multiplied or divided
@@ -49,4 +49,4 @@
            * purpose: to add/subtract/multiply or divide
    * return: added/subtracted/multiplied or divided number      
    * behavior: calculates the sum/diffference/product or quotient of the two arguments
-   * purpose: to do a mathematical operation using two numbers
+   * purpose: it's a switchboard that runs add/subtract/multiply and divide functions
