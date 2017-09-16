@@ -41,7 +41,8 @@
 
 * operateIntermediary: function
   *  args: 3
-       * operation: an add, subtract, multiply or divide function
+       * operation: a switchboard
+           * purpose: it runs add/subtract/multiply and divide functions
        * arg1: a number
            * purpose: to be added/subtracted/multiplied or divided
        * arg2: a number
