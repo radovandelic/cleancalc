@@ -1,32 +1,85 @@
-var lastResult = 0000;
 
-function add(arg1, arg2) {
-	return arg1 + arg2;
-};
+var calc = {
 
-function subtract(arg1, arg2) {
-	return arg1 - arg2;
-};
+	lastResult: 0000,
 
-function multiply(arg1, arg2) {
-	return arg1 * arg2;
-};
+	add: function (arg1, arg2) {
+		return arg1 + arg2;
+	},
 
-function divide(arg1, arg2) {
-	return arg1 / arg2;
-};
+	subtract: function subtract(arg1, arg2) {
+		return arg1 - arg2;
+	},
 
+	multiply: function (arg1, arg2) {
+		return arg1 * arg2;
+	},
 
-function operate(operation, arg1, arg2) {
-	if (arg2) {
-		lastResult = operation(arg1, arg2);
-		return lastResult;
-	} else {
-		lastResult = operation(arg1, lastResult);
-		return lastResult;
+	divide: function (arg1, arg2) {
+		return arg1 / arg2;
+	},
+
+	operate: function (operation, arg1, arg2) {
+
+		if (arg2) {
+			lastResult = operation(arg1, arg2);
+			return lastResult;
+		} else {
+			lastResult = operation(arg1, lastResult);
+			return lastResult;
+		}
 	}
 };
 
-lastResult = operate(add, 2, 4);
-lastResult = operate(add, 5);
-lastResult = operate(multiply, 3,2);
+var tests = {
+
+	testAdd: function (number1, number2) {
+		return calc.add(number1, number2);
+	},
+
+	testSubtract: function (number1, number2) {
+		return calc.subtract(number1, number2);
+	},
+
+	testMultiply: function (number1, number2) {
+		return calc.multiply(number1, number2);
+	},
+
+	testDivide: function (number1, number2) {
+		return calc.divide(number1, number2);
+	},
+
+	testOperate: function (operation, number1, number2) {
+		return operation(number1, number2);
+	},
+
+	testMeta: function (number1, number2) {
+		results = [];
+
+		results.push(this.testAdd(number1, number2));
+		results.push(this.testSubtract(number1, number2));
+		results.push(this.testMultiply(number1, number2));
+		results.push(this.testDivide(number1, number2));
+		results.push(this.testOperate(calc.add, number1, number2));
+		results.push(this.testOperate(calc.subtract, number1, number2));
+		results.push(this.testOperate(calc.multiply, number1, number2));
+		results.push(this.testOperate(calc.divide, number1, number2));
+		return results;
+	}
+
+};
+
+
+var numberOfTestRuns = 10;
+for (var i = 1; i < numberOfTestRuns + 1; i++) {
+
+	var number1 = Math.round(Math.random() * (10 ** (Math.random() * 10))); //creates random integer in a random size range
+	var number2 = Math.round(Math.random() * (10 ** (Math.random() * 10))); //creates random integer in a random size range
+
+	console.log("\n-------------------\nTest #" + i + ":");
+	console.log("(" + number1 + ", " + number2 + ")\n");
+
+	tests.testMeta(number1, number2).forEach(function (result) {
+		console.log(result);
+	});
+}

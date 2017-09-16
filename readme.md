@@ -1,4 +1,6 @@
-It's a silly procedural program to add a few numbers.
+It's a silly OOP app to add a few numbers.
+
+* v2.0: refactored, put functions inside objects and added a testing suite.
 
 * v1.0: operatedIntermediary() is deprecated in favor of operate() which applies the mathematical operation on lastResult in case arg2 is undefined. 
 
