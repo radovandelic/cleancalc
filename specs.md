@@ -11,9 +11,9 @@
 * subtract: function
   *  args: 2
        * arg1: a number
-           * purpose: to be subtracted
+           * purpose: the minuend
        * arg2: a number
-           * purpose: to be subtracted
+           * purpose: the subtrahend
    * return: subtracted number      
    * behavior: calculates the difference of the two arguments
    * purpose: to subtract two numbers
@@ -21,7 +21,7 @@
 * multiply: function
   *  args: 2
        * arg1: a number
-           * purpose: to be multiplied
+           * purpose: the 
        * arg2: a number
            * purpose: to be multiplied
    * return: multiplied number      
@@ -31,9 +31,9 @@
 * divide: function
   *  args: 2
        * arg1: a number
-           * purpose: to be divided
+           * purpose: the dividend
        * arg2: a number
-           * purpose: to be divided
+           * purpose: the divisor
    * return: divided number      
    * behavior: calculates the quotient of the two arguments
    * purpose: to divide two numbers
