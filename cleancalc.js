@@ -1,4 +1,3 @@
-
 var calc = {
 
 	lastResult: 0000,
@@ -69,11 +68,29 @@ var tests = {
 
 };
 
+
 var args = process.argv;
 var object = args[2];
-var method = args[3];
-var number1 = parseInt(args[4]);
-var number2 = parseInt(args[5]);
+var number1 = parseFloat(args[3]);
+var method = args[4];
+console.log(method);
+switch (method.trim()) {
+	case "+":
+		method = "add"
+		break;
+	case "-":
+		method = "subtract"
+		break;
+	case "/":
+		method = "divide"
+		break;
+	case "*":
+		method = "multiply";
+		break;
+	default:
+		break;
+}
+number2 = parseFloat(args[5]);
 if (object != undefined) {
 	console.log(object == "test" ? tests[method](number1, number2) : calc[method](number1, number2));
 

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>cleancalc</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M"
+        crossorigin="anonymous">
+    <link rel="stylesheet" href="css.css">
+
+    <script src="cleancalc.js"></script>
+    <script src="buttons.js"></script>
+</head>
+
+<body>
+    <div id="box">
+        <div class="input-group">
+            <input id="inputbox" style="margin: 20px;" type="text" class="form-control" placeholder="Enter number" aria-label="numbers" aria-describedby="basic-addon1">
+
+        </div>
+        <div>
+            <button type="button" onclick="numbers(this)" class="btn btn-dark">1</button>
+            <button type="button" onclick="numbers(this)" class="btn btn-dark">2</button>
+            <button type="button" onclick="numbers(this)" class="btn btn-dark">3</button>
+            <button type="button" onclick="operations(this)" class="btn btn-danger">C</button>
+        </div>
+        <div>
+            <button type="button" onclick="numbers(this)" class="btn btn-dark">4</button>
+            <button type="button" onclick="numbers(this)" class="btn btn-dark">5</button>
+            <button type="button" onclick="numbers(this)" class="btn btn-dark">6</button>
+            <button type="button" onclick="operations(this)" class="btn btn-light">+</button>
+        </div>
+            <button type="button" onclick="numbers(this)" class="btn btn-dark">7</button>
+            <button type="button" onclick="numbers(this)" class="btn btn-dark">8</button>
+            <button type="button" onclick="numbers(this)" class="btn btn-dark">9</button>
+            <button type="button" onclick="operations(this)" class="btn btn-light">-</button>
+
+            <button type="button" onclick="operations(this)" class="btn btn-light">*</button>
+            <button type="button" onclick="numbers(this)" class="btn btn-dark">0</button>
+            <button type="button" onclick="operations(this)" class="btn btn-light">/</button>
+            <button type="button" onclick="operations(this)" class="btn btn-info">=</button>
+        </div>
+
+    </div>
+</body>
+
+</html>

@@ -1,5 +1,9 @@
 It's a silly OOP app to add a few numbers.
 
+* v3.0 
+    * added a html GUI for the calculator
+    * simplified commandline arguments. just enter e.g "calc 2 + 2" or "test 4 / 2" to do mathematical operations or tests. Be sure to put "*" in quotation marks tho.
+
 * v2.1 added commandline functionality.
     * first argument: test or calc, selects the object you want to use.
     * second argument: selects the function you want to use
