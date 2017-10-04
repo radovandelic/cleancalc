@@ -21,11 +21,11 @@ var calc = {
 	operate: function (operation, arg1, arg2) {
 
 		if (arg2) {
-			lastResult = operation(arg1, arg2);
-			return lastResult;
+			this.lastResult = operation(arg1, arg2);
+			return this.lastResult;
 		} else {
-			lastResult = operation(arg1, lastResult);
-			return lastResult;
+			this.lastResult = operation(arg1, calc.lastResult);
+			return this.lastResult;
 		}
 	}
 };

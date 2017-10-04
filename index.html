@@ -3,6 +3,8 @@
 
 <head>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible">
     <title>cleancalc</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M"
         crossorigin="anonymous">
@@ -15,8 +17,12 @@
 <body>
     <div id="box">
         <div class="input-group">
-            <input id="inputbox" style="margin: 20px;" type="text" class="form-control" placeholder="Enter number" aria-label="numbers" aria-describedby="basic-addon1">
+            <input id="inputbox" style="margin: 20px;" type="text" class="form-control" placeholder="Enter number" aria-label="numbers"
+                aria-describedby="basic-addon1">
 
+        </div>
+        <div>
+            <p id="lastResult"><br> </p>
         </div>
         <div>
             <button type="button" onclick="numbers(this)" class="btn btn-dark">1</button>
@@ -30,6 +36,7 @@
             <button type="button" onclick="numbers(this)" class="btn btn-dark">6</button>
             <button type="button" onclick="operations(this)" class="btn btn-light">+</button>
         </div>
+        <div>
             <button type="button" onclick="numbers(this)" class="btn btn-dark">7</button>
             <button type="button" onclick="numbers(this)" class="btn btn-dark">8</button>
             <button type="button" onclick="numbers(this)" class="btn btn-dark">9</button>

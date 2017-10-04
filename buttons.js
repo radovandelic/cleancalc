@@ -1,8 +1,8 @@
 
-var number1, number2;
-var method = "";
+var number1, number2, method, inputbox, lr;
 document.addEventListener("DOMContentLoaded", function (event) {
-    var inputbox = document.getElementById("inputbox");
+    inputbox = document.getElementById("inputbox");
+    lr = document.getElementById("lastResult");
 });
 
 
@@ -11,41 +11,66 @@ function numbers(number) {
 }
 
 function operations(doWhat) {
-    if (number1 == undefined) {
-        number1 = isNaN(inputbox.value) ? alert("You think this is a mf game? \nEnter an actual number.") : parseFloat(inputbox.value);
+    doWhat = doWhat.innerHTML;
+    if (number1 == undefined & doWhat != "C") {
+        if (!inputbox.value) { alert("You have not entered any number."); }
+        else { number1 = isNaN(inputbox.value) ? alert("You think this is a mf game? \nEnter an actual number.") : parseFloat(inputbox.value); }
     } else {
         number2 = isNaN(inputbox.value) ? alert("You think this is a mf game? \nEnter an actual number.") : parseFloat(inputbox.value);
     }
     inputbox.value = "";
-    if (doWhat.innerHTML == "C") {
+
+
+    if (doWhat == "C") {
         inputbox.value = "";
         number1 = undefined;
         number2 = undefined;
-        method = "";
-    } else if (/\*/.test(doWhat.innerHTML)) {
-        method = "multiply";
+        method = undefined;
+        calc.lastResult = 0000;
+        lr.innerHTML = "<br>";
+    } else if (/\*/.test(doWhat)) {
+        method = calc.multiply;
+        calculate(method, number1, number2);
     } else {
-        switch (doWhat.innerHTML) {
+        switch (doWhat) {
             case "+":
-                method = "add";
+                method = calc.add;
+                calculate(method, number1, number2);
                 break;
             case "-":
-                method = "subtract";
+                method = calc.subtract;
+                calculate(method, number1, number2);
                 break;
             case "/":
-                method = "divide";
+                method = calc.divide;
+                calculate(method, number1, number2);
                 break;
             case "=":
-                if (number2 != undefined && method != "") {
-                    number1 = calc[method](number1, number2);
-                    method = "";
-                    number2 = undefined;
-                }
-                inputbox.value = number1;
+                calculate(method, number1, number2); 
                 break;
             default:
                 break;
         }
     }
+    if (calc.lastResult != 0000) {
+        lr.innerHTML = "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Last result: " + calc.lastResult;
+    } else {
+        lr.innerHTML = "<br>";
+    }
 }
-function verbatim(fn) { return fn.toString().match(/[^]*\/\*\s*([^]*)\s*\*\/\}$/)[1]; }
+
+function calculate() {
+    if (method) {
+        if (number2) {
+            calc.operate(method, number1, number2);
+            method = undefined;
+            number1 = undefined;
+            number2 = undefined;
+        } else if (calc.lastResult != 0000 && number1) {
+            calc.operate(method, number1);
+            method = undefined;
+            number1 = undefined;
+            number2 = undefined;
+        }
+    }
+}
