@@ -24,7 +24,7 @@ var calc = {
 			this.lastResult = operation(arg1, arg2);
 			return this.lastResult;
 		} else {
-			this.lastResult = operation(arg1, calc.lastResult);
+			this.lastResult = operation(calc.lastResult, arg1);
 			return this.lastResult;
 		}
 	}
