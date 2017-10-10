@@ -1,39 +1,24 @@
 var model = {
 
     lastResult: 0000,
-
-    add: function (arg1, arg2) {
-        return arg1 + arg2;
-    },
-
-    subtract: function subtract(arg1, arg2) {
-        return arg1 - arg2;
-    },
-
-    multiply: function (arg1, arg2) {
-        return arg1 * arg2;
-    },
-
-    divide: function (arg1, arg2) {
-        return arg1 / arg2;
-    },
-
-    operate: function (operation, arg1, arg2) {
-
-        if (arg2) {
-            this.lastResult = operation(arg1, arg2);
-            return this.lastResult;
-        } else if (this.lastResult != 0000) {
-            this.lastResult = operation(this.lastResult, arg1);
+    getResult: function (error, callback) {
+        if (callback) {
+            callback(error, this.lastResult);
+        } else {
             return this.lastResult;
         }
     },
-    getResult: function (error, callback) {
-        callback(error, this.lastResult);
+    setResult: function (error, value, callback) {
+        if (error) {
+            callback(error, value);
+        } else {
+            this.lastResult = value;
+            if (callback) {
+                callback(error, value);
+            }
+        }
     },
     clear: function () {
         this.lastResult = 0000;
     }
 };
-
-module.exports = model;

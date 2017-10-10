@@ -8,7 +8,7 @@ var view = {
     },
     showResult: function (error, result) {
         if (error) {
-            alert(error)
+            alert(error);
         } else if (result != 0000) {
             document.getElementById("lastresult").innerHTML = "&nbsp;&nbsp;&nbsp; Last result: " + result;
         }

@@ -1,4 +1,7 @@
-It's a silly OOP app to add a few numbers.
+It's a silly MVC app to add a few numbers.
+
+* v4.0
+    * refactored in MVC
 
 * v3.0 
     * added a html GUI for the calculator
